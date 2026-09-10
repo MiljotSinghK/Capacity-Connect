@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <filter id="crispShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="8" dy="8" stdDeviation="0" flood-color="#0a0a0a" flood-opacity="1" />
+    </filter>
+  </defs>
+  <path d="M 256,24 L 460,140 L 460,372 L 256,488 L 52,372 L 52,140 Z" fill="#ffffff" stroke="#0a0a0a" stroke-width="18" stroke-linejoin="round" filter="url(#crispShadow)" />
+  <path d="M 220,180 C 150,180 130,230 130,266 C 130,302 160,340 220,340 L 245,340 A 22,22 0 0,0 245,296 L 220,296 C 185,296 174,280 174,266 C 174,250 185,224 220,224 L 270,224 A 22,22 0 0,0 270,180 Z" fill="url(#skyGrad)" stroke="#0a0a0a" stroke-width="10" stroke-linejoin="round" />
+  <path d="M 292,332 C 362,332 382,282 382,246 C 382,210 352,172 292,172 L 267,172 A 22,22 0 0,0 267,216 L 292,216 C 327,216 338,232 338,246 C 338,262 327,288 292,288 L 242,288 A 22,22 0 0,0 242,332 Z" fill="url(#orangeGrad)" stroke="#0a0a0a" stroke-width="10" stroke-linejoin="round" />
+  <rect x="236" y="278" width="40" height="10" rx="3" fill="#0a0a0a" />
+  <rect x="230" y="258" width="52" height="10" rx="3" fill="#38bdf8" stroke="#0a0a0a" stroke-width="3" />
+  <rect x="224" y="238" width="64" height="10" rx="3" fill="#f97316" stroke="#0a0a0a" stroke-width="3" />
+  <circle cx="140" cy="266" r="14" fill="#38bdf8" stroke="#0a0a0a" stroke-width="8" />
+  <circle cx="372" cy="246" r="14" fill="#f97316" stroke="#0a0a0a" stroke-width="8" />
+</svg>

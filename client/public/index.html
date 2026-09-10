@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Capacity Connect | Verified Skills & Competency Intelligence</title>
+    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/CapacityConnect.svg" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=VT323&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                sky: '#38bdf8',
+                orange: '#f97316',
+                dark: '#0f172a',
+                card: '#ffffff',
+                border: '#111827',
+                surface: '#f7f9fb'
+              }
+            },
+            fontFamily: {
+              vt: ['VT323', 'monospace'],
+              sans: ['Space Grotesk', 'sans-serif'],
+              mono: ['Space Mono', 'monospace'],
+            },
+            boxShadow: {
+              'brutal': '4px 4px 0px 0px #111827',
+              'brutal-lg': '8px 8px 0px 0px #111827',
+              'brutal-orange': '5px 5px 0px 0px #f97316',
+              'brutal-sky': '5px 5px 0px 0px #38bdf8',
+              'brutal-dark': '5px 5px 0px 0px #38bdf8',
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-[#f7f9fb] text-slate-900 font-sans transition-colors duration-200 dark:bg-[#090d16] dark:text-slate-100 selection:bg-[#38bdf8] selection:text-black">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
+

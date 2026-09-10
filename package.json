@@ -1,0 +1,10 @@
+{
+  "name": "capacity-connect",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix client start",
+    "start": "npm --prefix client start",
+    "build": "npm --prefix client run build"
+  }
+}
