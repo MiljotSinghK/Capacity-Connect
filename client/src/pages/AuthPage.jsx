@@ -36,33 +36,33 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-slate-900 flex flex-col justify-center py-12 sm:px-6 lg:px-8 font-['VT323'] transition-none">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-900 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8 font-sans">
       {/* Header Section */}
-      <div className="sm:mx-auto sm:w-full sm:max-w-md px-4">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <Link 
           to="/" 
-          className="text-sky-500 hover:text-sky-600 dark:text-sky-400 dark:hover:text-sky-300 text-2xl font-bold inline-block mb-4 transition-none"
+          className="text-sky-500 hover:text-sky-600 dark:text-sky-400 dark:hover:text-sky-300 text-sm font-bold inline-block mb-4"
         >
-          &larr; Return to Base
+          &larr; Return to Home
         </Link>
-        <h2 className="text-center text-5xl font-extrabold text-black dark:text-sky-400 uppercase tracking-widest">
+        <h2 className="text-center font-display text-2xl sm:text-3xl font-black text-black dark:text-sky-400 uppercase tracking-wide">
           {isLogin ? 'System Access' : 'New Registry'}
         </h2>
       </div>
 
       {/* Main Authentication Card */}
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-4">
-        <div className="bg-white dark:bg-slate-800 py-8 px-6 shadow-[8px_8px_0px_rgba(0,0,0,1)] border-4 border-black transition-none">
+      <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="bg-white dark:bg-slate-800 py-6 sm:py-8 px-5 sm:px-8 shadow-brutal-lg border-2 sm:border-4 border-black">
           
           {/* View Toggle */}
-          <div className="flex space-x-4 mb-8">
+          <div className="flex space-x-3 sm:space-x-4 mb-6">
             <button
               type="button"
               onClick={() => setIsLogin(true)}
-              className={`w-1/2 py-3 text-2xl font-bold uppercase border-4 border-black transition-none focus:outline-none focus:ring-4 focus:ring-sky-400 ${
+              className={`w-1/2 py-2.5 font-display text-sm sm:text-base font-bold uppercase border-2 border-black transition-all focus:outline-none ${
                 isLogin
-                  ? 'bg-sky-400 text-black shadow-[4px_4px_0px_rgba(0,0,0,1)] -translate-y-1 -translate-x-1'
-                  : 'bg-transparent text-black dark:text-sky-400 hover:bg-sky-100 dark:hover:bg-slate-700 hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)]'
+                  ? 'bg-sky-400 text-black shadow-brutal'
+                  : 'bg-transparent text-black dark:text-sky-400 hover:bg-sky-50 dark:hover:bg-slate-700'
               }`}
             >
               Login
@@ -70,106 +70,96 @@ export default function AuthPage() {
             <button
               type="button"
               onClick={() => setIsLogin(false)}
-              className={`w-1/2 py-3 text-2xl font-bold uppercase border-4 border-black transition-none focus:outline-none focus:ring-4 focus:ring-sky-400 ${
+              className={`w-1/2 py-2.5 font-display text-sm sm:text-base font-bold uppercase border-2 border-black transition-all focus:outline-none ${
                 !isLogin
-                  ? 'bg-sky-400 text-black shadow-[4px_4px_0px_rgba(0,0,0,1)] -translate-y-1 -translate-x-1'
-                  : 'bg-transparent text-black dark:text-sky-400 hover:bg-sky-100 dark:hover:bg-slate-700 hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[2px_2px_0px_rgba(0,0,0,1)]'
+                  ? 'bg-sky-400 text-black shadow-brutal'
+                  : 'bg-transparent text-black dark:text-sky-400 hover:bg-sky-50 dark:hover:bg-slate-700'
               }`}
             >
               Register
             </button>
           </div>
 
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit}>
             {!isLogin && (
               <div>
-                <label className="block text-2xl font-bold text-black dark:text-sky-300 uppercase">
+                <label className="block text-xs sm:text-sm font-bold text-black dark:text-sky-300 uppercase tracking-wider mb-1">
                   Full Name
                 </label>
-                <div className="mt-1">
-                  <input
-                    type="text"
-                    required
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="block w-full px-3 py-3 border-4 border-black bg-white dark:bg-slate-900 text-black dark:text-white placeholder:font-mono placeholder-gray-500 font-['VT323'] text-2xl focus:outline-none focus:ring-4 focus:ring-sky-400 transition-none"
-                    placeholder="Enter full name"
-                  />
-                </div>
+                <input
+                  type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="block w-full px-3 py-2.5 border-2 border-black bg-white dark:bg-slate-900 text-black dark:text-white placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-sky-400 font-sans"
+                  placeholder="Enter full name"
+                />
               </div>
             )}
 
             <div>
-              <label className="block text-2xl font-bold text-black dark:text-sky-300 uppercase">
+              <label className="block text-xs sm:text-sm font-bold text-black dark:text-sky-300 uppercase tracking-wider mb-1">
                 Credentials (Email)
               </label>
-              <div className="mt-1">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="block w-full px-3 py-3 border-4 border-black bg-white dark:bg-slate-900 text-black dark:text-white placeholder:font-mono placeholder-gray-500 font-['VT323'] text-2xl focus:outline-none focus:ring-4 focus:ring-sky-400 transition-none"
-                  placeholder="user@capacity.connect"
-                />
-              </div>
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="block w-full px-3 py-2.5 border-2 border-black bg-white dark:bg-slate-900 text-black dark:text-white placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-sky-400 font-sans"
+                placeholder="user@capacity.connect"
+              />
             </div>
 
             <div>
-              <label className="block text-2xl font-bold text-black dark:text-sky-300 uppercase">
+              <label className="block text-xs sm:text-sm font-bold text-black dark:text-sky-300 uppercase tracking-wider mb-1">
                 Passcode
               </label>
-              <div className="mt-1">
-                <input
-                  type="password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full px-3 py-3 border-4 border-black bg-white dark:bg-slate-900 text-black dark:text-white placeholder:font-mono placeholder-gray-500 font-['VT323'] text-2xl focus:outline-none focus:ring-4 focus:ring-sky-400 transition-none"
-                  placeholder="••••••••"
-                />
-              </div>
+              <input
+                type="password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="block w-full px-3 py-2.5 border-2 border-black bg-white dark:bg-slate-900 text-black dark:text-white placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-sky-400 font-sans"
+                placeholder="••••••••"
+              />
             </div>
 
             {!isLogin && (
               <div>
-                <label className="block text-2xl font-bold text-black dark:text-sky-300 uppercase">
+                <label className="block text-xs sm:text-sm font-bold text-black dark:text-sky-300 uppercase tracking-wider mb-1">
                   Department
                 </label>
-                <div className="mt-1">
-                  <input
-                    type="text"
-                    required
-                    value={department}
-                    onChange={(e) => setDepartment(e.target.value)}
-                    className="block w-full px-3 py-3 border-4 border-black bg-white dark:bg-slate-900 text-black dark:text-white placeholder:font-mono placeholder-gray-500 font-['VT323'] text-2xl focus:outline-none focus:ring-4 focus:ring-sky-400 transition-none"
-                    placeholder="e.g. Engineering"
-                  />
-                </div>
+                <input
+                  type="text"
+                  required
+                  value={department}
+                  onChange={(e) => setDepartment(e.target.value)}
+                  className="block w-full px-3 py-2.5 border-2 border-black bg-white dark:bg-slate-900 text-black dark:text-white placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-sky-400 font-sans"
+                  placeholder="e.g. Engineering"
+                />
               </div>
             )}
 
             <div>
-              <label className="block text-2xl font-bold text-black dark:text-sky-300 uppercase">
+              <label className="block text-xs sm:text-sm font-bold text-black dark:text-sky-300 uppercase tracking-wider mb-1">
                 Select Role
               </label>
-              <div className="mt-1">
-                <select
-                  value={role}
-                  onChange={(e) => setRole(e.target.value)}
-                  className="block w-full px-3 py-3 border-4 border-black bg-white dark:bg-slate-900 text-black dark:text-white font-['VT323'] text-2xl focus:outline-none focus:ring-4 focus:ring-sky-400 transition-none cursor-pointer"
-                >
-                  <option value="Trainee">Trainee</option>
-                  <option value="Trainer">Trainer</option>
-                  <option value="Admin">Admin</option>
-                </select>
-              </div>
+              <select
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+                className="block w-full px-3 py-2.5 border-2 border-black bg-white dark:bg-slate-900 text-black dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-sky-400 cursor-pointer font-sans"
+              >
+                <option value="Trainee">Trainee</option>
+                <option value="Trainer">Trainer</option>
+                <option value="Admin">Admin</option>
+              </select>
             </div>
 
-            <div className="pt-4">
+            <div className="pt-2">
               <button
                 type="submit"
-                className="w-full flex justify-center py-4 px-4 border-4 border-black text-3xl font-extrabold text-black bg-orange-500 hover:bg-orange-400 active:bg-orange-600 active:translate-y-0 active:translate-x-0 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] active:shadow-none focus:outline-none focus:ring-4 focus:ring-sky-400 transition-none uppercase tracking-widest"
+                className="w-full flex justify-center py-3 px-4 border-2 border-black font-display text-base sm:text-lg font-bold text-black bg-orange-500 hover:bg-orange-400 active:bg-orange-600 shadow-brutal btn-tactile uppercase tracking-wider"
               >
                 {isLogin ? 'Sign In' : 'Sign Up'}
               </button>

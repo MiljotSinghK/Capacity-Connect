@@ -560,15 +560,15 @@ export function LearnerRosterTable({ roster, onNudgeLearner }) {
             className="w-full px-3 py-2 bg-white dark:bg-slate-800 border-2 border-black dark:border-white/40 font-mono text-xs focus:outline-none focus:ring-2 focus:ring-[#38bdf8]"
           />
         </div>
-        <span className="font-vt text-sm font-bold text-slate-600 dark:text-slate-400">
+        <span className="font-sans text-xs font-bold text-slate-600 dark:text-slate-400">
           Showing {filtered.length} of {roster.length} Enrolled Learners
         </span>
       </div>
 
       <div className="bg-white dark:bg-slate-900 border-2 border-black dark:border-[#38bdf8] shadow-brutal overflow-x-auto">
-        <table className="w-full text-left border-collapse font-vt">
+        <table className="w-full min-w-[650px] text-left border-collapse font-sans text-sm">
           <thead>
-            <tr className="bg-slate-100 dark:bg-slate-800 border-b-2 border-black dark:border-white/20 text-sm uppercase tracking-wider text-slate-700 dark:text-slate-200">
+            <tr className="bg-slate-100 dark:bg-slate-800 border-b-2 border-black dark:border-white/20 text-xs uppercase tracking-wider text-slate-700 dark:text-slate-200">
               <th className="p-4">Trainee / Identification</th>
               <th className="p-4">Assigned Course</th>
               <th className="p-4">Completion %</th>

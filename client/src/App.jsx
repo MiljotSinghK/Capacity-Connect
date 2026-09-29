@@ -15,7 +15,7 @@ export default function App() {
   return (
     <Router>
       <Navbar />
-      <main className="min-h-screen">
+      <main className="min-h-screen overflow-x-hidden w-full max-w-full">
         
         <Routes>
           
